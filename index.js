@@ -177,6 +177,7 @@ app.use(cors({
     'http://localhost:3000',
     'http://localhost:5173',
     'http://localhost:8081' ,
+    'https://meetkats-new.vercel.app/',
     'http://192.168.61.248:3000', // Replace with your computer's IP address
     'capacitor://localhost', // For capacitor apps
     'ionic://localhost', // For ionic framework
