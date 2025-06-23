@@ -173,20 +173,25 @@ console.log('Setting up CORS...');
 app.use(cors({
   origin: [
     'https://meetkats.com',
-    'https://meetkats.com/', // Include both versions to be safe
+    'https://meetkats.com/',
     'http://localhost:3000',
     'http://localhost:5173',
-    'http://localhost:8081' ,
+    'http://localhost:8081',
     'https://meetkats-new.vercel.app',
-    'https://meetkats-new.vercel.app/',
-    'http://192.168.61.248:3000', // Replace with your computer's IP address
-    'capacitor://localhost', // For capacitor apps
-    'ionic://localhost', // For ionic framework
-    '*' // During development, allow all origins (remove in production)
+    'http://192.168.61.248:3000',
+    'capacitor://localhost',
+    'ionic://localhost',
+    '*'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'Cache-Control'
+  ],
 }));
+
+
 
 // Session setup
 console.log('Setting up session...');
