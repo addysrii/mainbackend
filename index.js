@@ -170,26 +170,34 @@ app.use(sqlSanitizer);
 
 // Set up CORS
 console.log('Setting up CORS...');
-app.use(cors({
-  origin: [
-    'https://meetkats.com',
-    'https://meetkats.com/',
-    'http://localhost:3000',
-    'http://localhost:5173',
-    'http://localhost:8081',
-    'https://meetkats-new.vercel.app',
-    'http://192.168.61.248:3000',
-    'capacitor://localhost',
-    'ionic://localhost',
-    '*'
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: [
-    'Content-Type',
-    'Authorization',
-    'Cache-Control'
-  ],
-}));
+const allowedOrigins = [
+  'https://meetkats.com',
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:8081',
+  'https://meetkats-new.vercel.app',
+  'http://192.168.61.248:3000',
+  'capacitor://localhost',
+  'ionic://localhost'
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps, curl, Postman)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Cache-Control'],
+    credentials: true // <-- include this if you're using cookies or auth headers
+  })
+);
+
 
 
 
