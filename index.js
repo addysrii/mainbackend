@@ -115,7 +115,7 @@ try {
 
   authLimiter = expressRateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
-    max: 10, // limit each IP to 10 login/signup attempts per hour
+    max: 30, // limit each IP to 10 login/signup attempts per hour
     standardHeaders: true,
     legacyHeaders: false,
     message: { error: 'Too many authentication attempts, please try again later.' }

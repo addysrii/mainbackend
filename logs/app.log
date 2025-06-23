@@ -1273,3 +1273,39 @@
 {"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-03-31T03:52:53.831Z"}
 {"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-03-31T03:52:55.067Z"}
 {"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-03-31T03:52:55.117Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-23T12:28:14.436Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-23T12:28:14.439Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-06-23T12:28:34.468Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in PRODUCTION mode","timestamp":"2025-06-23T12:28:48.495Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: C:\\Users\\anshi\\Desktop\\new-backend\\templates\\emails","timestamp":"2025-06-23T12:28:50.533Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-23T12:28:50.534Z"}
+{"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-06-23T12:28:52.253Z"}
+{"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-06-23T12:28:52.434Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-23T12:28:52.437Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-23T12:28:52.437Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-23T12:39:54.077Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-23T12:39:54.079Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-06-23T12:39:54.967Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in PRODUCTION mode","timestamp":"2025-06-23T12:39:55.355Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: C:\\Users\\anshi\\Desktop\\new-backend\\templates\\emails","timestamp":"2025-06-23T12:39:55.507Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-23T12:39:55.508Z"}
+{"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-06-23T12:39:56.778Z"}
+{"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-06-23T12:39:56.806Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-23T12:39:56.809Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-23T12:39:56.810Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-23T12:40:37.852Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-23T12:40:37.853Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-06-23T12:40:38.755Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in PRODUCTION mode","timestamp":"2025-06-23T12:40:39.147Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: C:\\Users\\anshi\\Desktop\\new-backend\\templates\\emails","timestamp":"2025-06-23T12:40:39.275Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-23T12:40:39.276Z"}
+{"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-06-23T12:40:40.038Z"}
+{"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-06-23T12:40:40.065Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-23T12:40:40.068Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-23T12:40:40.068Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-23T12:51:59.284Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-23T12:51:59.286Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-06-23T12:52:00.500Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in PRODUCTION mode","timestamp":"2025-06-23T12:52:01.006Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: C:\\Users\\anshi\\Desktop\\new-backend\\templates\\emails","timestamp":"2025-06-23T12:52:01.243Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-23T12:52:01.244Z"}
