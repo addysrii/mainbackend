@@ -37,6 +37,36 @@ const PORT = process.env.PORT || 3000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 console.log(`Server will run on port ${PORT}, BASE_URL: ${BASE_URL}`);
 
+// Set up CORS
+console.log('Setting up CORS...');
+const allowedOrigins = [
+  'https://meetkats.com',
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:8081',
+  'https://meetkats-new.vercel.app',
+  'http://192.168.61.248:3000',
+  'capacitor://localhost',
+  'ionic://localhost'
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps, curl, Postman)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Cache-Control'],
+    credentials: true // <-- include this if you're using cookies or auth headers
+  })
+);
+app.options('*', cors());
 // Set up security with Helmet
 console.log('Setting up security middleware...');
 app.use(helmet());
@@ -168,35 +198,7 @@ const sqlSanitizer = (req, res, next) => {
 
 app.use(sqlSanitizer);
 
-// Set up CORS
-console.log('Setting up CORS...');
-const allowedOrigins = [
-  'https://meetkats.com',
-  'http://localhost:3000',
-  'http://localhost:5173',
-  'http://localhost:8081',
-  'https://meetkats-new.vercel.app',
-  'http://192.168.61.248:3000',
-  'capacitor://localhost',
-  'ionic://localhost'
-];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps, curl, Postman)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'Cache-Control'],
-    credentials: true // <-- include this if you're using cookies or auth headers
-  })
-);
 
 
 
