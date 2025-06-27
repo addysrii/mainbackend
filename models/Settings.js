@@ -1,229 +1,229 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Settings Schema
 const settingsSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
-    unique: true
   },
   appSettings: {
     theme: {
       type: String,
-      enum: ['light', 'dark', 'system'],
-      default: 'system'
+      enum: ["light", "dark", "system"],
+      default: "system",
     },
     language: {
       type: String,
-      default: 'en'
+      default: "en",
     },
     timezone: String,
     contentPreferences: {
       categories: [String],
       hideExplicitContent: {
         type: Boolean,
-        default: true
+        default: true,
       },
       dataUsage: {
         type: String,
-        enum: ['always', 'wifi_only', 'never'],
-        default: 'wifi_only'
+        enum: ["always", "wifi_only", "never"],
+        default: "wifi_only",
       },
       autoplay: {
         type: Boolean,
-        default: true
-      }
-    }
+        default: true,
+      },
+    },
   },
   privacySettings: {
     profileVisibility: {
       type: String,
-      enum: ['public', 'connections_only', 'private'],
-      default: 'public'
+      enum: ["public", "connections_only", "private"],
+      default: "public",
     },
     locationSharing: {
       type: Boolean,
-      default: true
+      default: true,
     },
     connectionVisibility: {
       type: String,
-      enum: ['public', 'connections_only', 'private'],
-      default: 'public'
+      enum: ["public", "connections_only", "private"],
+      default: "public",
     },
     activityVisibility: {
       type: String,
-      enum: ['public', 'connections_only', 'private'],
-      default: 'connections_only'
+      enum: ["public", "connections_only", "private"],
+      default: "connections_only",
     },
     searchableByEmail: {
       type: Boolean,
-      default: true
+      default: true,
     },
     searchableByPhone: {
       type: Boolean,
-      default: false
+      default: false,
     },
     viewsVisibility: {
       type: String,
-      enum: ['everyone', 'connections', 'none'],
-      default: 'everyone'
+      enum: ["everyone", "connections", "none"],
+      default: "everyone",
     },
     allowAnonymousViews: {
       type: Boolean,
-      default: true
+      default: true,
     },
     dataSharing: {
       type: String,
-      enum: ['full', 'minimal', 'none'],
-      default: 'minimal'
-    }
+      enum: ["full", "minimal", "none"],
+      default: "minimal",
+    },
   },
   notificationSettings: {
     emailNotifications: {
       type: Boolean,
-      default: true
+      default: true,
     },
     pushNotifications: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnMessage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnConnection: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnPost: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnComment: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnLike: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnMention: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnProfileView: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnEvent: {
       type: Boolean,
-      default: true
+      default: true,
     },
     notifyOnJob: {
       type: Boolean,
-      default: true
+      default: true,
     },
     topicSubscriptions: [String],
     doNotDisturb: {
       enabled: {
         type: Boolean,
-        default: false
+        default: false,
       },
       startTime: {
         type: String,
-        default: '22:00'
+        default: "22:00",
       },
       endTime: {
         type: String,
-        default: '07:00'
+        default: "07:00",
       },
       timezone: String,
       muteAll: {
         type: Boolean,
-        default: false
-      }
-    }
+        default: false,
+      },
+    },
   },
   securitySettings: {
     twoFactorAuth: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loginNotifications: {
       type: Boolean,
-      default: true
+      default: true,
     },
     loginApproval: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    trustedDevices: [{
-      deviceId: String,
-      deviceName: String,
-      lastUsed: Date
-    }],
+    trustedDevices: [
+      {
+        deviceId: String,
+        deviceName: String,
+        lastUsed: Date,
+      },
+    ],
     sessionTimeout: {
       type: Number,
-      default: 24 // hours
-    }
+      default: 24, // hours
+    },
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   nearbyUsers: {
     enabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     radius: {
       type: Number,
-      default: 1
+      default: 1,
     },
     unit: {
       type: String,
-      enum: ['km', 'mi'],
-      default: 'km'
+      enum: ["km", "mi"],
+      default: "km",
     },
     filters: {
       industry: {
         type: String,
-        default: null
+        default: null,
       },
       skills: [String],
       interests: [String],
       connectionStatus: {
         type: String,
-        enum: ['all', 'connected', 'not_connected'],
-        default: 'all'
-      }
+        enum: ["all", "connected", "not_connected"],
+        default: "all",
+      },
     },
     cooldown: {
       type: Number,
-      default: 60 // minutes
-    }
+      default: 60, // minutes
+    },
   },
   lastNearbyNotification: {
-    type: Date
-  }
+    type: Date,
+  },
 });
-
 
 // Indexes
 settingsSchema.index({ user: 1 }, { unique: true });
 
 // Pre-save middleware to update timestamp
-settingsSchema.pre('save', function(next) {
+settingsSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-const Settings = mongoose.model('Settings', settingsSchema);
+const Settings = mongoose.model("Settings", settingsSchema);
 
 module.exports = Settings;

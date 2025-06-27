@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Project Schema
@@ -6,114 +6,129 @@ const projectSchema = new Schema({
   title: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   skills: [String],
   category: {
     type: String,
-    enum: ['web', 'mobile', 'design', 'art', 'writing', 'video', 'game', 'other'],
-    default: 'other'
+    enum: [
+      "web",
+      "mobile",
+      "design",
+      "art",
+      "writing",
+      "video",
+      "game",
+      "other",
+    ],
+    default: "other",
   },
   visibility: {
     type: String,
-    enum: ['public', 'connections', 'private'],
-    default: 'private'
+    enum: ["public", "connections", "private"],
+    default: "private",
   },
-  collaborators: [{
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
+  collaborators: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+      permissions: [String], // e.g., 'view', 'edit', 'delete', 'manage'
     },
-    permissions: [String] // e.g., 'view', 'edit', 'delete', 'manage'
-  }],
-  attachments: [{
-    filename: String,
-    originalname: String,
-    path: String,
-    mimetype: String,
-    size: Number
-  }],
+  ],
+  attachments: [
+    {
+      filename: String,
+      originalname: String,
+      path: String,
+      mimetype: String,
+      size: Number,
+    },
+  ],
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes for Project
 projectSchema.index({ owner: 1 });
-projectSchema.index({ 'collaborators.user': 1 });
+projectSchema.index({ "collaborators.user": 1 });
 projectSchema.index({ skills: 1 });
 projectSchema.index({ visibility: 1 });
 projectSchema.index({ category: 1 });
 projectSchema.index({ createdAt: -1 });
-projectSchema.index({ title: 'text', description: 'text', skills: 'text' });
+projectSchema.index({ title: "text", description: "text", skills: "text" });
 
 // Achievement Schema
 const achievementSchema = new Schema({
   title: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   description: String,
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   date: {
     type: Date,
-    required: true
+    required: true,
   },
   skills: [String],
   visibility: {
     type: String,
-    enum: ['public', 'connections', 'private'],
-    default: 'private'
+    enum: ["public", "connections", "private"],
+    default: "private",
   },
   image: {
     filename: String,
     originalname: String,
     path: String,
     mimetype: String,
-    size: Number
+    size: Number,
   },
-  endorsements: [{
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
+  endorsements: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+      comment: String,
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+      updatedAt: {
+        type: Date,
+        default: Date.now,
+      },
     },
-    comment: String,
-    createdAt: {
-      type: Date,
-      default: Date.now
-    },
-    updatedAt: {
-      type: Date,
-      default: Date.now
-    }
-  }],
+  ],
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes for Achievement
@@ -121,62 +136,64 @@ achievementSchema.index({ owner: 1 });
 achievementSchema.index({ date: -1 });
 achievementSchema.index({ skills: 1 });
 achievementSchema.index({ visibility: 1 });
-achievementSchema.index({ 'endorsements.user': 1 });
-achievementSchema.index({ title: 'text', description: 'text', skills: 'text' });
+achievementSchema.index({ "endorsements.user": 1 });
+achievementSchema.index({ title: "text", description: "text", skills: "text" });
 
 // Streak Schema
 const streakSchema = new Schema({
   title: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   description: String,
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   goal: String,
   frequency: {
     type: String,
-    enum: ['daily', 'weekly', 'custom'],
-    default: 'daily'
+    enum: ["daily", "weekly", "custom"],
+    default: "daily",
   },
   startDate: {
     type: Date,
-    required: true
+    required: true,
   },
   endDate: Date,
   visibility: {
     type: String,
-    enum: ['public', 'connections', 'private'],
-    default: 'private'
+    enum: ["public", "connections", "private"],
+    default: "private",
   },
   lastCheckIn: Date,
-  supporters: [{
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
+  supporters: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+      message: String,
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+      updatedAt: {
+        type: Date,
+        default: Date.now,
+      },
     },
-    message: String,
-    createdAt: {
-      type: Date,
-      default: Date.now
-    },
-    updatedAt: {
-      type: Date,
-      default: Date.now
-    }
-  }],
+  ],
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes for Streak
@@ -186,24 +203,24 @@ streakSchema.index({ endDate: 1 });
 streakSchema.index({ frequency: 1 });
 streakSchema.index({ visibility: 1 });
 streakSchema.index({ lastCheckIn: -1 });
-streakSchema.index({ 'supporters.user': 1 });
-streakSchema.index({ title: 'text', description: 'text', goal: 'text' });
+streakSchema.index({ "supporters.user": 1 });
+streakSchema.index({ title: "text", description: "text", goal: "text" });
 
 // Streak Check-In Schema
 const streakCheckInSchema = new Schema({
   streak: {
     type: Schema.Types.ObjectId,
-    ref: 'Streak',
-    required: true
+    ref: "Streak",
+    required: true,
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   notes: String,
   evidence: {
@@ -211,16 +228,16 @@ const streakCheckInSchema = new Schema({
     originalname: String,
     path: String,
     mimetype: String,
-    size: Number
+    size: Number,
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes for StreakCheckIn
@@ -235,32 +252,31 @@ const skillSchema = new Schema({
     required: true,
     trim: true,
     lowercase: true,
-    unique: true
   },
   categoryRank: {
     type: Number,
-    default: 0
+    default: 0,
   },
   popular: {
     type: Boolean,
-    default: false
+    default: false,
   },
   aliases: [String],
   category: String,
   relatedSkills: [String],
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes for Skill
 skillSchema.index({ name: 1 }, { unique: true });
-skillSchema.index({ name: 'text', aliases: 'text' });
+skillSchema.index({ name: "text", aliases: "text" });
 skillSchema.index({ category: 1 });
 skillSchema.index({ popular: 1 });
 skillSchema.index({ categoryRank: 1 });
@@ -269,27 +285,27 @@ skillSchema.index({ categoryRank: 1 });
 const recommendationSchema = new Schema({
   from: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   to: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   text: {
     type: String,
-    required: true
+    required: true,
   },
   relationship: String,
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes for Recommendation
@@ -299,43 +315,43 @@ recommendationSchema.index({ from: 1 });
 recommendationSchema.index({ createdAt: -1 });
 
 // Pre-save middleware to update timestamps
-projectSchema.pre('save', function(next) {
+projectSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-achievementSchema.pre('save', function(next) {
+achievementSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-streakSchema.pre('save', function(next) {
+streakSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-streakCheckInSchema.pre('save', function(next) {
+streakCheckInSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-skillSchema.pre('save', function(next) {
+skillSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-recommendationSchema.pre('save', function(next) {
+recommendationSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
 // Create models
-const Project = mongoose.model('Project', projectSchema);
-const Achievement = mongoose.model('Achievement', achievementSchema);
-const Streak = mongoose.model('Streak', streakSchema);
-const StreakCheckIn = mongoose.model('StreakCheckIn', streakCheckInSchema);
-const Skill = mongoose.model('Skill', skillSchema);
-const Recommendation = mongoose.model('Recommendation', recommendationSchema);
+const Project = mongoose.model("Project", projectSchema);
+const Achievement = mongoose.model("Achievement", achievementSchema);
+const Streak = mongoose.model("Streak", streakSchema);
+const StreakCheckIn = mongoose.model("StreakCheckIn", streakCheckInSchema);
+const Skill = mongoose.model("Skill", skillSchema);
+const Recommendation = mongoose.model("Recommendation", recommendationSchema);
 
 module.exports = {
   Project,
@@ -343,5 +359,5 @@ module.exports = {
   Streak,
   StreakCheckIn,
   Skill,
-  Recommendation
+  Recommendation,
 };
