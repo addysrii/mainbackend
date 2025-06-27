@@ -98,6 +98,12 @@ exports.updateProfile = async (req, res) => {
       socialLinks,
     } = req.body;
 
+    // Log incoming request for debugging
+    console.log("Incoming updateProfile request:", {
+      body: req.body,
+      file: req.file,
+    });
+
     // Build profile object
     const profileFields = {};
 
@@ -118,12 +124,17 @@ exports.updateProfile = async (req, res) => {
       const skillIds = [];
 
       for (const skillName of skillNames) {
-        let skill = await Skill.findOne({ name: skillName.toLowerCase() });
-        if (!skill) {
-          skill = new Skill({ name: skillName.toLowerCase() });
-          await skill.save();
+        try {
+          let skill = await Skill.findOne({ name: skillName.toLowerCase() });
+          if (!skill) {
+            skill = new Skill({ name: skillName.toLowerCase() });
+            await skill.save();
+          }
+          skillIds.push(skill._id);
+        } catch (err) {
+          console.error(`Error processing skill '${skillName}':`, err);
+          return res.status(400).json({ error: `Invalid skill: ${skillName}` });
         }
-        skillIds.push(skill._id);
       }
 
       profileFields.skills = skillIds;
@@ -156,6 +167,10 @@ exports.updateProfile = async (req, res) => {
 
     // Handle profile image upload
     if (req.file) {
+      if (!req.file.path) {
+        console.error("File upload error: req.file.path missing", req.file);
+        return res.status(400).json({ error: "File upload failed" });
+      }
       profileFields.profileImage = req.file.path;
     }
 
@@ -198,10 +213,23 @@ exports.updateProfile = async (req, res) => {
       )
       .populate("skills"); // Populate skills to return skill objects
 
+    if (!user) {
+      console.error("User not found for update:", req.user.id);
+      return res.status(404).json({ error: "User not found" });
+    }
+
     res.json(user);
   } catch (error) {
     console.error("Error updating profile:", error);
-    res.status(500).json({ error: "Server error" });
+    if (error.name === "ValidationError") {
+      return res
+        .status(400)
+        .json({ error: error.message, details: error.errors });
+    }
+    if (error.code === "LIMIT_FILE_SIZE") {
+      return res.status(400).json({ error: "File too large" });
+    }
+    res.status(500).json({ error: "Server error", details: error.stack });
   }
 };
 
