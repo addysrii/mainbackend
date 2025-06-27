@@ -8,8 +8,13 @@ const fs = require("fs");
 
 // Ensure uploads/profile directory exists
 const uploadDir = "uploads/profile";
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch (err) {
+  console.error("Failed to create uploads/profile directory:", err);
+  process.exit(1);
 }
 
 // Configure multer for file uploads
