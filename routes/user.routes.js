@@ -4,6 +4,13 @@ const router = express.Router();
 const userController = require("../controllers/user.controller");
 const { authenticateToken, isAdmin } = require("../middleware/auth.middleware");
 const multer = require("multer");
+const fs = require("fs");
+
+// Ensure uploads/profile directory exists
+const uploadDir = "uploads/profile";
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
