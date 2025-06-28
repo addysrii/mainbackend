@@ -12,12 +12,13 @@ const expressRateLimit = require('express-rate-limit');
 const dotenv = require('dotenv');
 const setupSocketIO = require('./lib/socket');
 const jwt = require('jsonwebtoken');
+require('dotenv').config(); 
 console.log('Starting application initialization...');
-// Keep your current import
-const validationMiddleware = require('./middleware/validation.middleware');
-const userRoutes = require('./routes/user.routes');
-// And then use:
 
+// Keep your current import
+ const validationMiddleware = require('./middleware/validation.middleware');
+const userRoutes = require('./routes/user.routes');
+// // And then use:
 // Import models
 try {
   console.log('Importing models...');

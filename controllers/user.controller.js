@@ -1,11 +1,13 @@
 // controllers/user.controller.js
-const { User } = require("../models/User");
+const { User, ProfileView } = require("../models/User"); 
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
-const { ProfileView } = require("../models/User");
 const { Achievement, Project } = require("../models/Portfolio");
 const Settings = require("../models/Settings");
-const Skill = require("../models/Skill");
+// console.log("Loading Skill...");
+// const Skill = require("../models/Skill");
+// console.log("✅ Skill loaded");
+
 
 /**
  * Get the current authenticated user
