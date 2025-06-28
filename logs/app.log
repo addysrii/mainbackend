@@ -1311,3 +1311,11 @@
 {"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-23T12:52:01.244Z"}
 {"service":"chat-api","level":"warn","message":"Google OAuth strategy not configured - missing credentials","timestamp":"2025-06-27T14:03:35.101Z"}
 {"service":"chat-api","level":"warn","message":"LinkedIn OAuth strategy not configured - missing credentials","timestamp":"2025-06-27T14:03:35.113Z"}
+{"service":"chat-api","level":"warn","message":"Google OAuth strategy not configured - missing credentials","timestamp":"2025-06-27T19:52:48.914Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-27T20:07:14.043Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-27T20:07:14.050Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-27T20:08:20.067Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-27T20:08:20.073Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-27T20:09:19.772Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-27T20:09:34.923Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-27T20:09:34.926Z"}
