@@ -341,6 +341,11 @@ const userSchema = new Schema({
   coverImage: String,
   headline: String,
   bio: String,
+  profileVisibility: {
+    type: String,
+    enum: ["public", "connections_only", "private"],
+    default: "public",
+  },
   location: {
     type: {
       type: String,
