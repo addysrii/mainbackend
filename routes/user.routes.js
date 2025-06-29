@@ -5,6 +5,9 @@ const userController = require("../controllers/user.controller");
 const { authenticateToken, isAdmin } = require("../middleware/auth.middleware");
 const multer = require("multer");
 const fs = require("fs");
+const { dpUpload, handleMulterError } = require("../configure/cloudinary"); // adjust path if different
+
+
 
 // Ensure uploads/profile directory exists
 const uploadDir = "uploads/profile";
@@ -48,9 +51,11 @@ router.get("/me", authenticateToken, userController.getCurrentUser);
 router.put(
   "/profile",
   authenticateToken,
-  upload.single("profileImage"),
-  userController.updateProfile
+  dpUpload.single("profileImage"),  
+  handleMulterError,                
+  userController.updateProfile      
 );
+
 router.get(
   "/users/:userId/profile",
   authenticateToken,

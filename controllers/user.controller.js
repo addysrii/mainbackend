@@ -105,7 +105,7 @@ exports.updateProfile = async (req, res) => {
       body: req.body,
       file: req.file,
     });
-
+   console.log(req.file);
     // Build profile object
     const profileFields = {};
 
