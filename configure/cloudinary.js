@@ -20,11 +20,12 @@ const createCloudinaryStorage = (folder, formats, transformations = []) => {
       folder: folder,
       resource_type: 'auto',
       allowed_formats: formats,
-      transformation: [
-        { quality: 'auto' },
-        { fetch_format: 'auto' },
-        ...transformations
-      ]
+      transformation: []
+      // transformation: [
+      //   { quality: 'auto' },
+      //   { fetch_format: 'auto' },
+      //   ...transformations
+      // ]
     }
   });
 };
