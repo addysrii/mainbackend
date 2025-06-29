@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
 const { Achievement, Project } = require("../models/Portfolio");
 const Settings = require("../models/Settings");
+
+
 // console.log("Loading Skill...");
 // const Skill = require("../models/Skill");
 // console.log("✅ Skill loaded");
@@ -119,28 +121,12 @@ exports.updateProfile = async (req, res) => {
     if (gender) profileFields.gender = gender;
 
     // Handle skills - convert skill names to ObjectIds
-    if (skills) {
-      let skillNames = Array.isArray(skills)
-        ? skills
-        : skills.split(",").map((skill) => skill.trim());
-      const skillIds = [];
+if (skills) {
+  profileFields.skills = Array.isArray(skills)
+    ? skills
+    : skills.split(",").map((skill) => skill.trim());
+}
 
-      for (const skillName of skillNames) {
-        try {
-          let skill = await Skill.findOne({ name: skillName.toLowerCase() });
-          if (!skill) {
-            skill = new Skill({ name: skillName.toLowerCase() });
-            await skill.save();
-          }
-          skillIds.push(skill._id);
-        } catch (err) {
-          console.error(`Error processing skill '${skillName}':`, err);
-          return res.status(400).json({ error: `Invalid skill: ${skillName}` });
-        }
-      }
-
-      profileFields.skills = skillIds;
-    }
 
     // Handle interests - properly handle different formats
     if (interests) {
@@ -177,9 +163,33 @@ exports.updateProfile = async (req, res) => {
     }
 
     // Handle social links
-    if (socialLinks) {
-      profileFields.socialLinks = socialLinks;
+   // Rebuild socialLinks from FormData if necessary
+if (socialLinks) {
+  if (typeof socialLinks === 'string') {
+    try {
+      profileFields.socialLinks = JSON.parse(socialLinks);
+    } catch (err) {
+      // If not a JSON string, maybe it's malformed or split into fields like socialLinks[linkedin]
+      profileFields.socialLinks = {}; // fallback empty
     }
+  } else if (typeof socialLinks === 'object') {
+    profileFields.socialLinks = socialLinks;
+  } else {
+    // Fallback: manually reconstruct from keys in req.body
+    const socialLinkKeys = Object.keys(req.body).filter(key => key.startsWith('socialLinks['));
+    if (socialLinkKeys.length) {
+      profileFields.socialLinks = {};
+      for (const key of socialLinkKeys) {
+        const match = key.match(/^socialLinks\[(.+)\]$/);
+        if (match) {
+          const subKey = match[1];
+          profileFields.socialLinks[subKey] = req.body[key];
+        }
+      }
+    }
+  }
+}
+
 
     // Handle education
     if (education) {

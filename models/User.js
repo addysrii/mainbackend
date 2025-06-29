@@ -365,12 +365,7 @@ const userSchema = new Schema({
   website: String,
   birthday: Date,
   gender: String,
-  skills: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Skill",
-    },
-  ],
+ skills: [String],
   skillEndorsements: [skillEndorsementSchema],
   interests: {
     topics: [String],
