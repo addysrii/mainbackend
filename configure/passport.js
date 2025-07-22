@@ -12,7 +12,7 @@ const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const LINKEDIN_CLIENT_ID = process.env.LINKEDIN_CLIENT_ID;
 const LINKEDIN_CLIENT_SECRET = process.env.LINKEDIN_CLIENT_SECRET;
-const BASE_URL = process.env.BASE_URL || 'https://new-backend-w86d.onrender.com';
+const BASE_URL = 'https://new-backend-w86d.onrender.com';
 console.log(BASE_URL)
 console.log(GOOGLE_CLIENT_SECRET)
 console.log(GOOGLE_CLIENT_ID)
