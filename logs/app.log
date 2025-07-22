@@ -1561,3 +1561,39 @@
 {"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-06-29T13:10:07.334Z"}
 {"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-29T13:10:07.337Z"}
 {"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-29T13:10:07.338Z"}
+{"service":"chat-api","level":"warn","message":"Google OAuth strategy not configured - missing credentials","timestamp":"2025-06-30T03:31:03.539Z"}
+{"service":"chat-api","level":"warn","message":"LinkedIn OAuth strategy not configured - missing credentials","timestamp":"2025-06-30T03:31:03.543Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-06-30T03:31:38.177Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in TEST mode","timestamp":"2025-06-30T03:31:56.948Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: E:\\mk_website\\meetkats_backend\\templates\\emails","timestamp":"2025-06-30T03:32:00.392Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-30T03:32:00.393Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-06-30T03:33:12.529Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-06-30T03:33:12.530Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-06-30T03:33:13.751Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in TEST mode","timestamp":"2025-06-30T03:33:14.262Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: E:\\mk_website\\meetkats_backend\\templates\\emails","timestamp":"2025-06-30T03:33:14.440Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-06-30T03:33:14.440Z"}
+{"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-06-30T03:33:15.809Z"}
+{"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-06-30T03:33:16.066Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-30T03:33:16.070Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-06-30T03:33:16.070Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-07-03T03:41:53.794Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-07-03T03:41:53.796Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-07-03T03:42:35.844Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in TEST mode","timestamp":"2025-07-03T03:42:59.419Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: E:\\mk_website\\meetkats_backend\\templates\\emails","timestamp":"2025-07-03T03:43:06.023Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-07-03T03:43:06.025Z"}
+{"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-07-03T03:43:08.075Z"}
+{"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-07-03T03:43:08.692Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-07-03T03:43:08.702Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-07-03T03:43:08.703Z"}
+{"service":"chat-api","level":"info","message":"Google strategy configured","timestamp":"2025-07-17T02:39:07.132Z"}
+{"service":"chat-api","level":"info","message":"LinkedIn strategy configured","timestamp":"2025-07-17T02:39:07.135Z"}
+{"service":"chat-api","level":"info","message":"Cloudinary storage handler initialized","timestamp":"2025-07-17T02:39:46.473Z"}
+{"service":"chat-api","level":"info","message":"PhonePe service initialized in TEST mode","timestamp":"2025-07-17T02:40:08.850Z"}
+{"service":"chat-api","level":"warn","message":"Email templates directory not found: E:\\mk_website\\meetkats_backend\\templates\\emails","timestamp":"2025-07-17T02:40:13.242Z"}
+{"service":"chat-api","level":"info","message":"Email service initialized","timestamp":"2025-07-17T02:40:13.244Z"}
+{"message":"MongoDB transport added to security logger","level":"info","service":"chat-api","timestamp":"2025-07-17T02:40:14.906Z"}
+{"service":"chat-api","level":"warn","message":"Redis connection failed, using in-memory adapter: ","timestamp":"2025-07-17T02:40:15.340Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-07-17T02:40:15.345Z"}
+{"service":"chat-api","level":"info","message":"Socket events handler initialized","timestamp":"2025-07-17T02:40:15.345Z"}

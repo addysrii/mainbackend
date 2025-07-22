@@ -1005,3 +1005,79 @@
 [2025-06-29T13:10:05.962Z] Adding auth middleware for protected routes
 [2025-06-29T13:10:05.963Z] Registering protected payment routes
 [2025-06-29T13:10:05.965Z] All payment routes registered successfully
+[2025-06-30T03:32:00.400Z] Starting imports for payment routes
+[2025-06-30T03:32:00.401Z] Importing payment controller
+[2025-06-30T03:32:00.404Z] Attempting to import phonepe controller from ../controllers/phonepe.controller
+[2025-06-30T03:32:00.431Z] Successfully imported phonepe controller
+[2025-06-30T03:32:00.431Z] Importing validation middleware
+[2025-06-30T03:32:00.432Z] Attempting to import validation middleware from ../middleware/validation.middleware
+[2025-06-30T03:32:00.432Z] Successfully imported validation middleware
+[2025-06-30T03:32:00.433Z] Importing auth middleware
+[2025-06-30T03:32:00.433Z] Attempting to import auth middleware from ../middleware/auth.middleware
+[2025-06-30T03:32:00.434Z] Successfully imported auth middleware
+[2025-06-30T03:32:00.434Z] Controller method exists: handlePhonePeCallback
+[2025-06-30T03:32:00.435Z] Controller method exists: handlePhonePeRedirect
+[2025-06-30T03:32:00.436Z] Controller method exists: initiatePhonePePayment
+[2025-06-30T03:32:00.440Z] Controller method exists: checkPhonePePaymentStatus
+[2025-06-30T03:32:00.442Z] Controller method exists: refundPhonePePayment
+[2025-06-30T03:32:00.443Z] Registering public callback and redirect routes
+[2025-06-30T03:32:00.444Z] Adding auth middleware for protected routes
+[2025-06-30T03:32:00.444Z] Registering protected payment routes
+[2025-06-30T03:32:00.445Z] All payment routes registered successfully
+[2025-06-30T03:33:14.448Z] Starting imports for payment routes
+[2025-06-30T03:33:14.449Z] Importing payment controller
+[2025-06-30T03:33:14.451Z] Attempting to import phonepe controller from ../controllers/phonepe.controller
+[2025-06-30T03:33:14.454Z] Successfully imported phonepe controller
+[2025-06-30T03:33:14.455Z] Importing validation middleware
+[2025-06-30T03:33:14.456Z] Attempting to import validation middleware from ../middleware/validation.middleware
+[2025-06-30T03:33:14.456Z] Successfully imported validation middleware
+[2025-06-30T03:33:14.457Z] Importing auth middleware
+[2025-06-30T03:33:14.457Z] Attempting to import auth middleware from ../middleware/auth.middleware
+[2025-06-30T03:33:14.458Z] Successfully imported auth middleware
+[2025-06-30T03:33:14.459Z] Controller method exists: handlePhonePeCallback
+[2025-06-30T03:33:14.459Z] Controller method exists: handlePhonePeRedirect
+[2025-06-30T03:33:14.460Z] Controller method exists: initiatePhonePePayment
+[2025-06-30T03:33:14.460Z] Controller method exists: checkPhonePePaymentStatus
+[2025-06-30T03:33:14.461Z] Controller method exists: refundPhonePePayment
+[2025-06-30T03:33:14.461Z] Registering public callback and redirect routes
+[2025-06-30T03:33:14.462Z] Adding auth middleware for protected routes
+[2025-06-30T03:33:14.462Z] Registering protected payment routes
+[2025-06-30T03:33:14.463Z] All payment routes registered successfully
+[2025-07-03T03:43:06.097Z] Starting imports for payment routes
+[2025-07-03T03:43:06.105Z] Importing payment controller
+[2025-07-03T03:43:06.108Z] Attempting to import phonepe controller from ../controllers/phonepe.controller
+[2025-07-03T03:43:06.170Z] Successfully imported phonepe controller
+[2025-07-03T03:43:06.172Z] Importing validation middleware
+[2025-07-03T03:43:06.174Z] Attempting to import validation middleware from ../middleware/validation.middleware
+[2025-07-03T03:43:06.175Z] Successfully imported validation middleware
+[2025-07-03T03:43:06.176Z] Importing auth middleware
+[2025-07-03T03:43:06.178Z] Attempting to import auth middleware from ../middleware/auth.middleware
+[2025-07-03T03:43:06.179Z] Successfully imported auth middleware
+[2025-07-03T03:43:06.181Z] Controller method exists: handlePhonePeCallback
+[2025-07-03T03:43:06.182Z] Controller method exists: handlePhonePeRedirect
+[2025-07-03T03:43:06.183Z] Controller method exists: initiatePhonePePayment
+[2025-07-03T03:43:06.184Z] Controller method exists: checkPhonePePaymentStatus
+[2025-07-03T03:43:06.186Z] Controller method exists: refundPhonePePayment
+[2025-07-03T03:43:06.188Z] Registering public callback and redirect routes
+[2025-07-03T03:43:06.189Z] Adding auth middleware for protected routes
+[2025-07-03T03:43:06.190Z] Registering protected payment routes
+[2025-07-03T03:43:06.190Z] All payment routes registered successfully
+[2025-07-17T02:40:13.307Z] Starting imports for payment routes
+[2025-07-17T02:40:13.310Z] Importing payment controller
+[2025-07-17T02:40:13.312Z] Attempting to import phonepe controller from ../controllers/phonepe.controller
+[2025-07-17T02:40:13.349Z] Successfully imported phonepe controller
+[2025-07-17T02:40:13.350Z] Importing validation middleware
+[2025-07-17T02:40:13.350Z] Attempting to import validation middleware from ../middleware/validation.middleware
+[2025-07-17T02:40:13.351Z] Successfully imported validation middleware
+[2025-07-17T02:40:13.352Z] Importing auth middleware
+[2025-07-17T02:40:13.352Z] Attempting to import auth middleware from ../middleware/auth.middleware
+[2025-07-17T02:40:13.353Z] Successfully imported auth middleware
+[2025-07-17T02:40:13.354Z] Controller method exists: handlePhonePeCallback
+[2025-07-17T02:40:13.354Z] Controller method exists: handlePhonePeRedirect
+[2025-07-17T02:40:13.355Z] Controller method exists: initiatePhonePePayment
+[2025-07-17T02:40:13.356Z] Controller method exists: checkPhonePePaymentStatus
+[2025-07-17T02:40:13.356Z] Controller method exists: refundPhonePePayment
+[2025-07-17T02:40:13.357Z] Registering public callback and redirect routes
+[2025-07-17T02:40:13.357Z] Adding auth middleware for protected routes
+[2025-07-17T02:40:13.358Z] Registering protected payment routes
+[2025-07-17T02:40:13.358Z] All payment routes registered successfully
